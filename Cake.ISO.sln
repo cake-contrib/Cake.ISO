@@ -1,0 +1,28 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.26403.7
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Cake.ISO", "src\Cake.ISO\Cake.ISO.csproj", "{3F1DA709-89C3-45BF-9A63-2EC987EA917E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Cake.ISO.Tests", "tests\Cake.ISO.Tests\Cake.ISO.Tests.csproj", "{0786407A-F7F3-4B50-AD75-EFFEF577263D}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{3F1DA709-89C3-45BF-9A63-2EC987EA917E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3F1DA709-89C3-45BF-9A63-2EC987EA917E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3F1DA709-89C3-45BF-9A63-2EC987EA917E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3F1DA709-89C3-45BF-9A63-2EC987EA917E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0786407A-F7F3-4B50-AD75-EFFEF577263D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0786407A-F7F3-4B50-AD75-EFFEF577263D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0786407A-F7F3-4B50-AD75-EFFEF577263D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0786407A-F7F3-4B50-AD75-EFFEF577263D}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
