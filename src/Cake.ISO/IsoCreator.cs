@@ -4,6 +4,7 @@ using Cake.Core.Diagnostics;
 using Cake.Core.IO;
 using DiscUtils.Iso9660;
 using Path = System.IO.Path;
+using System.IO;
 
 namespace Cake.ISO
 {
@@ -21,16 +22,24 @@ namespace Cake.ISO
         public void CreateIso(string inputPath, string outputPath, string volumeIdentifier)
         {
             _log.Verbose($"Creating ISO from directory {inputPath}");
-            var builder = new CDBuilder();
-            builder.UseJoliet = true;
-            builder.VolumeIdentifier = volumeIdentifier ?? "CAKE_ISO";
-            foreach (var files in System.IO.Directory.GetFiles(inputPath))
+            var builder = new CDBuilder
             {
-                builder.AddFile(Path.GetFileName(files), files);
-            }
-            foreach (var dir in System.IO.Directory.GetDirectories(inputPath))
+                UseJoliet = true,
+                VolumeIdentifier = volumeIdentifier ?? "CAKE_ISO"
+            };
+            foreach (var entry in Directory.GetFileSystemEntries(inputPath, "*", SearchOption.AllDirectories))
             {
-                builder.AddDirectory(dir);
+                var fileInfo = new FileInfo(entry);
+                if ((fileInfo.Attributes & FileAttributes.Directory) != 0)
+                {
+                    _log.Verbose($"Creating directory: {Path.GetFullPath(entry).Replace(inputPath, "")}");
+                    builder.AddDirectory(Path.GetFullPath(entry).Replace(inputPath, ""));
+                }
+                else
+                {
+                    _log.Verbose($"Creating file: {Path.GetFullPath(entry).Replace(inputPath, "")}");
+                    builder.AddFile(Path.GetFullPath(entry).Replace(inputPath, ""), entry);
+                }
             }
             builder.Build(outputPath);
         }
