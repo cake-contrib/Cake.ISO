@@ -20,7 +20,7 @@ var inputDir = "C:\path\to\files";
 var outputDir = "C:\path\to\output.iso";
 var volumeLabel = "MY_PROJECT";
 
-CreatIso(inputDir, outputDir, volumeLabel);
+CreateIso(inputDir, outputDir, volumeLabel);
 ```
 
 ## To-Do
