@@ -34,26 +34,28 @@ namespace Cake.ISO.Tests
         [Fact]
         public void ShouldCreateAnIsoWithAFile()
         {
-            var testString = "0x0abad1d3a";
-            var testFile = $"{Path.GetTempPath()}\\testIso\\test.txt";
-            var testOutFile = $"{Path.GetTempPath()}\\testIso\\test.iso";
-            if (!Directory.Exists($"{Path.GetTempPath()}\\testIso"))
+            var testFileName = Path.GetRandomFileName();
+            var testDir = Path.GetRandomFileName();
+            var testFile = $"{Path.GetTempPath()}\\{testDir}\\{testFileName}";
+            var testOutFile = $"{Path.GetTempPath()}\\{testDir}\\{testFileName}.iso";
+            if (!Directory.Exists($"{Path.GetTempPath()}\\{testDir}"))
             {
-                Directory.CreateDirectory($"{Path.GetTempPath()}/testIso");
+                Directory.CreateDirectory($"{Path.GetTempPath()}\\{testDir}");
             }
-            File.WriteAllText(testFile, testString);
+            File.WriteAllText(testFile, "0x0abad1d3a");
 
             var builder = new IsoCreator(_fixture.CakeEnvironmentMock.Object, _fixture.CakeLogMock.Object);
 
-            builder.CreateIso($"{Path.GetTempPath()}/testIso", testOutFile, "TEST_ISO");
+            builder.CreateIso($"{Path.GetTempPath()}{testDir}", testOutFile, "TEST_ISO");
             Assert.True(File.Exists(testOutFile));
         }
 
         [Fact]
         public void ShouldCreateNestedFilesAndDirectories()
         {
-            var inputPath = $"{Path.GetTempPath()}dirTest";
-            var isoDirs = $"{Path.GetTempPath()}dirTest\\nestedOne\\nestedTwo\\";
+            var testDir = Path.GetRandomFileName();
+            var inputPath = $"{Path.GetTempPath()}{testDir}";
+            var isoDirs = $"{Path.GetTempPath()}{testDir}\\nestedOne\\nestedTwo\\";
             if (!Directory.Exists(isoDirs))
             {
                 Directory.CreateDirectory(isoDirs);
