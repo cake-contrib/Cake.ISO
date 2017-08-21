@@ -70,7 +70,7 @@ Task("Publish-Nuget-Package")
         NuGetPush(packages, new NuGetPushSettings {
             Source = "https://www.nuget.org/api/v2/package",
             ApiKey = EnvironmentVariable("NugetApiKey")
-        })
+        });
     });
 
 //////////////////////////////////////////////////////////////////////
