@@ -3,7 +3,12 @@
 var target = Argument("target", "Default");
 var configuration = Argument("configuration", "Release");
 
-// Define directories.
+// vars
+var isLocalBuild = !AppVeyor.IsRunningOnAppVeyor;
+var version = "0.1.0-alpha";
+var semVersion = isLocalBuild ? version : string.Concat(version, "-build-", AppVeyor.Environment.Build.Number);
+
+// Definitions
 var buildDir = Directory("./src/Cake.ISO/bin") + Directory(configuration);
 
 Task("Clean")
@@ -43,6 +48,30 @@ Task("Run-Unit-Tests")
 {
     XUnit2("./tests/**/bin/" + configuration + "/*.Tests.dll");
 });
+
+Task("Create-Nuget-Package")
+    .IsDependentOn("Build")
+    .IsDependentOn("Run-Unit-Tests")
+    .Does(() =>
+    {
+        var packSettings = new NuGetPackSettings {
+            Version = version,
+            BasePath = "./src/Cake.ISO/bin/Release",
+            OutputDirectory = "./nuget"
+        };
+        NuGetPack("./Cake.ISO.nuspec", packSettings);
+    });
+
+Task("Publish-Nuget-Package")
+    .IsDependentOn("Create-Nuget-Package")
+    .Does(() =>
+    {
+        var packages = GetFiles("./nuget/*.nupkg");
+        NuGetPush(packages, new NuGetPushSettings {
+            Source = "https://www.nuget.org/api/v2/package",
+            ApiKey = EnvironmentVariable("NugetApiKey")
+        })
+    });
 
 //////////////////////////////////////////////////////////////////////
 // TASK TARGETS

@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<package xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+   <metadata xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
+      <id>Cake.ISO</id>
+      <version>0.1.0-alpha</version>
+      <authors>Austin Parker</authors>
+      <owners>Austin Parker</owners>
+      <title>Cake.ISO</title>
+      <description>Cake Build addin to allow creation of ISO files.</description>
+      <summary>Cake build addin to allow creation of ISO files.</summary>
+      <licenseUrl>https://github.com/austinlparker/Cake.ISO/blob/master/LICENSE</licenseUrl>
+      <projectUrl>https://github.com/austinlparker/Cake.ISO</projectUrl>
+      <requireLicenseAcceptance>false</requireLicenseAcceptance>
+      <copyright>Copyright (c) Austin Parker 2017</copyright>
+      <releaseNotes>Initial Release</releaseNotes>
+      <tags>Cake Script Build</tags>
+      <dependencies>
+        <dependency id="Cake.Core" version="0.21.1" />
+        <dependency id="DiscUtils.Core" version="0.13.0-alpha" />
+        <dependency id="DiscUtils.Iso9660" version="0.13.0-alpha" />
+        <dependency id="DiscUtils.Streams" version="0.13.0-alpha" />
+      </dependencies>
+   </metadata>
+
+   <files>
+      <file src="Cake.ISO.dll" target="lib\net45" />
+      <file src="Cake.ISO.pdb" target="lib\net45" />      
+   </files>
+
+</package>
