@@ -24,5 +24,4 @@ CreateIso(inputDir, outputDir, volumeLabel);
 ```
 
 ## To-Do
-* Enable support for bootable ISOs?
-* Support/test MacOS, Linux.
+* Enable support for bootable ISOs

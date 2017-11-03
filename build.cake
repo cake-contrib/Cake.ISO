@@ -27,19 +27,9 @@ Task("Restore-NuGet-Packages")
 Task("Build")
     .IsDependentOn("Restore-NuGet-Packages")
     .Does(() =>
-{
-    if(IsRunningOnWindows())
     {
-      // Use MSBuild
       MSBuild("./Cake.ISO.sln", settings =>
         settings.SetConfiguration(configuration));
-    }
-    else
-    {
-      // Use XBuild
-      XBuild("./src/Example.sln", settings =>
-        settings.SetConfiguration(configuration));
-    }
 });
 
 Task("Run-Unit-Tests")
