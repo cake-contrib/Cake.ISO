@@ -1,4 +1,6 @@
-#addin "nuget:?package=Cake.ISO"
+#addin "nuget:?package=Cake.ISO&version=0.1.4-alpha"
+
+var target = Argument("target", "Default");
 
 Task("Create-ISO")
     .Does(() =>

@@ -5,7 +5,7 @@ var configuration = Argument("configuration", "Release");
 
 // vars
 var isLocalBuild = !AppVeyor.IsRunningOnAppVeyor;
-var version = "0.1.3-alpha";
+var version = "0.1.4-alpha";
 var semVersion = isLocalBuild ? version : string.Concat(version, "-build-", AppVeyor.Environment.Build.Number);
 
 // Definitions
@@ -45,6 +45,7 @@ Task("Create-Nuget-Package")
     .Does(() =>
     {
         var packSettings = new NuGetPackSettings {
+            IncludeReferencedProjects = true,
             Version = version,
             BasePath = "./src/Cake.ISO/bin/Release",
             OutputDirectory = "./nuget"

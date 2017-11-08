@@ -24,8 +24,12 @@
    </metadata>
 
    <files>
-      <file src="Cake.ISO.dll" target="lib\net45" />
-      <file src="Cake.ISO.pdb" target="lib\net45" />      
+      <file src="Cake.ISO.dll" target="lib/net46" />
+      <file src="Cake.ISO.pdb" target="lib/net46" />    
+      <file src="DiscUtils.Core.dll" target="lib/net46" />
+      <file src="DiscUtils.Core.xml" target="lib/net46" />
+      <file src="DiscUtils.Iso9660.dll" target="lib/net46" />
+      <file src="DiscUtils.Streams.dll" target="lib/net46" />
    </files>
 
 </package>
