@@ -21,22 +21,21 @@ Task("Restore-NuGet-Packages")
     .IsDependentOn("Clean")
     .Does(() =>
 {
-    NuGetRestore("./Cake.ISO.sln");
+    DotNetCoreRestore("./Cake.ISO.sln");
 });
 
 Task("Build")
     .IsDependentOn("Restore-NuGet-Packages")
     .Does(() =>
     {
-      MSBuild("./Cake.ISO.sln", settings =>
-        settings.SetConfiguration(configuration));
+      DotNetCoreBuild("./Cake.ISO.sln", new DotNetCoreBuildSettings { Configuration = configuration });
 });
 
 Task("Run-Unit-Tests")
     .IsDependentOn("Build")
     .Does(() =>
 {
-    XUnit2("./tests/**/bin/" + configuration + "/*.Tests.dll");
+    DotNetCoreTest("./tests/Cake.ISO.Tests/Cake.ISO.Tests.csproj");
 });
 
 Task("Create-Nuget-Package")
@@ -44,13 +43,23 @@ Task("Create-Nuget-Package")
     .IsDependentOn("Run-Unit-Tests")
     .Does(() =>
     {
-        var packSettings = new NuGetPackSettings {
-            IncludeReferencedProjects = true,
+        // make sure our working dir is empty
+        CleanDirectory("./nuget/tmp");
+        
+        // two-parts -- publish to get _all_ the files, then an explicit pack.
+        DotNetCorePublish("./src/Cake.ISO/Cake.ISO.csproj", new DotNetCorePublishSettings
+        {          
+            Framework = "netstandard2.0",
+            Configuration = "Release",
+            OutputDirectory = "./nuget/tmp"
+        });
+
+        NuGetPack("./nuget/Cake.ISO.nuspec", new NuGetPackSettings {          
+            IncludeReferencedProjects = false,
             Version = version,
-            BasePath = "./src/Cake.ISO/bin/Release",
+            BasePath = "./nuget",
             OutputDirectory = "./nuget"
-        };
-        NuGetPack("./Cake.ISO.nuspec", packSettings);
+        });
     });
 
 Task("Publish-Nuget-Package")

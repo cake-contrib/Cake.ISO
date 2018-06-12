@@ -14,22 +14,13 @@
       <requireLicenseAcceptance>false</requireLicenseAcceptance>
       <copyright>Copyright (c) Austin Parker 2017</copyright>
       <releaseNotes>Initial Release</releaseNotes>
-      <tags>Cake Script Build</tags>
-      <dependencies>
-        <dependency id="Cake.Core" version="0.23.0" />
-        <dependency id="DiscUtils.Core" version="0.13.0-alpha" />
-        <dependency id="DiscUtils.Iso9660" version="0.13.0-alpha" />
-        <dependency id="DiscUtils.Streams" version="0.13.0-alpha" />
-      </dependencies>
+      <tags>Cake Script Build</tags>      
    </metadata>
-
    <files>
-      <file src="Cake.ISO.dll" target="lib/net46" />
-      <file src="Cake.ISO.pdb" target="lib/net46" />    
-      <file src="DiscUtils.Core.dll" target="lib/net46" />
-      <file src="DiscUtils.Core.xml" target="lib/net46" />
-      <file src="DiscUtils.Iso9660.dll" target="lib/net46" />
-      <file src="DiscUtils.Streams.dll" target="lib/net46" />
+      <file src="tmp\Cake.ISO.dll" target="lib/netstandard2.0" />
+      <file src="tmp\Cake.ISO.pdb" target="lib/netstandard2.0" />
+      <file src="tmp\DiscUtils.Core.dll" target="lib/netstandard2.0" />      
+      <file src="tmp\DiscUtils.Iso9660.dll" target="lib/netstandard2.0" />
+      <file src="tmp\DiscUtils.Streams.dll" target="lib/netstandard2.0" />
    </files>
-
 </package>

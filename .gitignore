@@ -300,3 +300,7 @@ __pycache__/
 
 # cake ignores
 tools/*
+
+# nuget publication
+nuget/**
+!nuget/Cake.ISO.nuspec
