@@ -10,26 +10,17 @@
       <summary>Cake build addin to allow creation of ISO files.</summary>
       <licenseUrl>https://github.com/austinlparker/Cake.ISO/blob/master/LICENSE</licenseUrl>
       <projectUrl>https://github.com/austinlparker/Cake.ISO</projectUrl>
-      <iconUrl>https://raw.githubusercontent.com/cake-contrib/graphics/a5cf0f881c390650144b2243ae551d5b9f836196/png/cake-contrib-medium.png</iconUrl>
+      <iconUrl>https://cdn.rawgit.com/cake-contrib/graphics/a5cf0f881c390650144b2243ae551d5b9f836196/png/cake-contrib-medium.png</iconUrl>
       <requireLicenseAcceptance>false</requireLicenseAcceptance>
       <copyright>Copyright (c) Austin Parker 2017</copyright>
       <releaseNotes>Initial Release</releaseNotes>
-      <tags>Cake Script Build</tags>
-      <dependencies>
-        <dependency id="Cake.Core" version="0.23.0" />
-        <dependency id="DiscUtils.Core" version="0.13.0-alpha" />
-        <dependency id="DiscUtils.Iso9660" version="0.13.0-alpha" />
-        <dependency id="DiscUtils.Streams" version="0.13.0-alpha" />
-      </dependencies>
+      <tags>Cake Script Build</tags>      
    </metadata>
-
    <files>
-      <file src="Cake.ISO.dll" target="lib/net46" />
-      <file src="Cake.ISO.pdb" target="lib/net46" />    
-      <file src="DiscUtils.Core.dll" target="lib/net46" />
-      <file src="DiscUtils.Core.xml" target="lib/net46" />
-      <file src="DiscUtils.Iso9660.dll" target="lib/net46" />
-      <file src="DiscUtils.Streams.dll" target="lib/net46" />
+      <file src="tmp\Cake.ISO.dll" target="lib/netstandard2.0" />
+      <file src="tmp\Cake.ISO.pdb" target="lib/netstandard2.0" />
+      <file src="tmp\DiscUtils.Core.dll" target="lib/netstandard2.0" />      
+      <file src="tmp\DiscUtils.Iso9660.dll" target="lib/netstandard2.0" />
+      <file src="tmp\DiscUtils.Streams.dll" target="lib/netstandard2.0" />
    </files>
-
 </package>
