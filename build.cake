@@ -5,7 +5,7 @@ var configuration = Argument("configuration", "Release");
 
 // vars
 var isLocalBuild = !AppVeyor.IsRunningOnAppVeyor;
-var version = "0.1.4-alpha";
+var version = "0.1.5-alpha";
 var semVersion = isLocalBuild ? version : string.Concat(version, "-build-", AppVeyor.Environment.Build.Number);
 
 // Definitions
