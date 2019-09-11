@@ -1,4 +1,4 @@
-﻿<Project Sdk="Microsoft.NET.Sdk">
+<Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
     <TargetFrameworks>netcoreapp2.0</TargetFrameworks>
     <GenerateAssemblyTitleAttribute>false</GenerateAssemblyTitleAttribute>
@@ -35,7 +35,7 @@
     <PackageReference Include="Cake.Core" Version="0.28.0" />
     <PackageReference Include="Cake.Testing" Version="0.28.0" />    
     <PackageReference Include="Moq" Version="4.8.2" />
-    <PackageReference Include="Microsoft.NET.Test.Sdk" Version="15.6.1" />    
+    <PackageReference Include="Microsoft.NET.Test.Sdk" Version="15.6.1" />
     <PackageReference Include="xunit.analyzers" Version="0.9.0" />
     <PackageReference Include="xunit.assert.source" Version="2.3.1" />
     <PackageReference Include="xunit.core" Version="2.3.1" />
@@ -44,7 +44,7 @@
   <PropertyGroup>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <GenerateBindingRedirectsOutputType>true</GenerateBindingRedirectsOutputType>
-  </PropertyGroup>    
+  </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Release|netcoreapp2.0|AnyCPU'">
     <CodeAnalysisRuleSet>Cake.ISO.Tests.ruleset</CodeAnalysisRuleSet>
   </PropertyGroup>
