@@ -8,9 +8,10 @@
       <title>Cake.ISO</title>
       <description>Cake Build addin to allow creation of ISO files.</description>
       <summary>Cake build addin to allow creation of ISO files.</summary>
-      <licenseUrl>https://github.com/austinlparker/Cake.ISO/blob/master/LICENSE</licenseUrl>
-      <projectUrl>https://github.com/austinlparker/Cake.ISO</projectUrl>
+      <license type="expression">MIT</license>
+      <projectUrl>https://github.com/cake-contrib/Cake.ISO</projectUrl>
       <iconUrl>https://cdn.jsdelivr.net/gh/cake-contrib/graphics/png/cake-contrib-medium.png</iconUrl>
+      <repository type="git" url="https://github.com/cake-contrib/Cake.ISO.git"/>
       <requireLicenseAcceptance>false</requireLicenseAcceptance>
       <copyright>Copyright (c) Austin Parker 2017</copyright>
       <releaseNotes>Initial Release</releaseNotes>

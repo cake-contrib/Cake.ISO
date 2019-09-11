@@ -6,9 +6,9 @@
   <PropertyGroup>
     <PackageId>$(AssemblyName)</PackageId>
     <Copyright>Copyright (c) Austin Parker 2017</Copyright>
-    <Authors>Austin Parker</Authors>        
+    <Authors>Austin Parker</Authors>
     <Description>Cake Build addin to allow creation of ISO files.</Description>
-    <RepositoryUrl>https://github.com/austinlparker/Cake.ISO</RepositoryUrl>
+    <RepositoryUrl>https://github.com/cake-contrib/Cake.ISO.git</RepositoryUrl>
     <RepositoryType>Git</RepositoryType>
     <PackageTags>Cake Script Build ISO</PackageTags>
     <PackageIconUrl>https://cdn.jsdelivr.net/gh/cake-contrib/graphics/png/cake-contrib-medium.png</PackageIconUrl>
@@ -43,10 +43,10 @@
     <GenerateAssemblyInformationalVersionAttribute>false</GenerateAssemblyInformationalVersionAttribute>
     <GenerateAssemblyCopyrightAttribute>false</GenerateAssemblyCopyrightAttribute>
     <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
-    <PackageLicenseUrl>https://github.com/austinlparker/Cake.ISO/blob/master/LICENSE</PackageLicenseUrl>
-    <PackageProjectUrl>https://github.com/austinlparker/Cake.ISO</PackageProjectUrl>
+    <PackageLicenseUrl>https://github.com/cake-contrib/Cake.ISO/blob/master/LICENSE</PackageLicenseUrl>
+    <PackageProjectUrl>https://github.com/cake-contrib/Cake.ISO</PackageProjectUrl>
     <PackageReleaseNotes>Initial Release</PackageReleaseNotes>
-  </PropertyGroup>  
+  </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
@@ -63,7 +63,7 @@
     <DefineConstants>TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
-  </PropertyGroup>  
+  </PropertyGroup>
   <PropertyGroup Condition=" '$(SourceAnalysisTreatErrorsAsWarnings)' == ''">
     <SourceAnalysisTreatErrorsAsWarnings>False</SourceAnalysisTreatErrorsAsWarnings>
   </PropertyGroup>
