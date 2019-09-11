@@ -14,13 +14,13 @@
       <requireLicenseAcceptance>false</requireLicenseAcceptance>
       <copyright>Copyright (c) Austin Parker 2017</copyright>
       <releaseNotes>Initial Release</releaseNotes>
-      <tags>Cake Script Build</tags>      
+      <tags>Cake Script Build</tags>
    </metadata>
    <files>
-      <file src="tmp\Cake.ISO.dll" target="lib/netstandard2.0" />
-      <file src="tmp\Cake.ISO.pdb" target="lib/netstandard2.0" />
-      <file src="tmp\DiscUtils.Core.dll" target="lib/netstandard2.0" />      
-      <file src="tmp\DiscUtils.Iso9660.dll" target="lib/netstandard2.0" />
-      <file src="tmp\DiscUtils.Streams.dll" target="lib/netstandard2.0" />
+      <file src="netstandard2.0\Cake.ISO.dll" target="lib/netstandard2.0" />
+      <file src="netstandard2.0\Cake.ISO.pdb" target="lib/netstandard2.0" />
+      <file src="netstandard2.0\DiscUtils.Core.dll" target="lib/netstandard2.0" />
+      <file src="netstandard2.0\DiscUtils.Iso9660.dll" target="lib/netstandard2.0" />
+      <file src="netstandard2.0\DiscUtils.Streams.dll" target="lib/netstandard2.0" />
    </files>
 </package>

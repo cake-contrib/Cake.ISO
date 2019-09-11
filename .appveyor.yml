@@ -7,7 +7,7 @@ image: Visual Studio 2017
 #  Build Script                   #
 #---------------------------------#
 build_script:
-  - ps: .\build.ps1 -Target AppVeyor
+  - ps: .\build.ps1 -Targe
 
 #---------------------------------#
 # Tests
@@ -37,7 +37,7 @@ branches:
 #  Build Cache                    #
 #---------------------------------#
 cache:
-- tools -> build.cake, tools/packages.config
+- tools -> recipe.cake, tools/packages.config
 
 #---------------------------------#
 #  Skip builds for doc changes    #
