@@ -1,4 +1,4 @@
-﻿<Project Sdk="Microsoft.NET.Sdk">
+<Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
     <TargetFrameworks>netstandard2.0</TargetFrameworks>
   </PropertyGroup>
@@ -11,7 +11,7 @@
     <RepositoryUrl>https://github.com/austinlparker/Cake.ISO</RepositoryUrl>
     <RepositoryType>Git</RepositoryType>
     <PackageTags>Cake Script Build ISO</PackageTags>
-    <PackageIconUrl>https://cdn.rawgit.com/cake-contrib/graphics/a5cf0f881c390650144b2243ae551d5b9f836196/png/cake-contrib-medium.png</PackageIconUrl>
+    <PackageIconUrl>https://cdn.jsdelivr.net/gh/cake-contrib/graphics/png/cake-contrib-medium.png</PackageIconUrl>
   </PropertyGroup>
   <!-- Misc -->
   <PropertyGroup>
@@ -68,7 +68,7 @@
     <SourceAnalysisTreatErrorsAsWarnings>False</SourceAnalysisTreatErrorsAsWarnings>
   </PropertyGroup>
   <ItemGroup>
-    <PackageReference Include="Cake.Core" Version="0.28.0" PrivateAssets="All" />
+    <PackageReference Include="Cake.Core" Version="0.33.0" PrivateAssets="All" />
     <PackageReference Include="DiscUtils.Core" Version="0.13.0.0-alpha" />
     <PackageReference Include="DiscUtils.Iso9660" Version="0.13.0.0-alpha" />
     <PackageReference Include="DiscUtils.Streams" Version="0.13.0.0-alpha" />
