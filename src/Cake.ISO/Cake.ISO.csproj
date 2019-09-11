@@ -12,6 +12,7 @@
     <RepositoryType>Git</RepositoryType>
     <PackageTags>Cake Script Build ISO</PackageTags>
     <PackageIconUrl>https://cdn.jsdelivr.net/gh/cake-contrib/graphics/png/cake-contrib-medium.png</PackageIconUrl>
+    <CopyLocalLockFileAssemblies>true</CopyLocalLockFileAssemblies>
   </PropertyGroup>
   <!-- Misc -->
   <PropertyGroup>
