@@ -9,13 +9,16 @@ Cake Build addin for creating ISO files.
 |[![NugetRelease](https://img.shields.io/nuget/v/Cake.ISO.svg)](https://www.nuget.org/packages/Cake.ISO/) | [![NugetPrerelease](https://img.shields.io/nuget/vpre/Cake.ISO.svg)](https://www.nuget.org/packages/Cake.ISO/)
 
 ## Installation
+
 Add the following reference to your Cake script:
-```
+
+```csharp
 #addin "Cake.ISO"
 ```
 
 ## Usage
-```
+
+```csharp
 var inputDir = "C:\path\to\files";
 var outputDir = "C:\path\to\output.iso";
 var volumeLabel = "MY_PROJECT";
@@ -24,4 +27,5 @@ CreateIso(inputDir, outputDir, volumeLabel);
 ```
 
 ## To-Do
+
 * Enable support for bootable ISOs
