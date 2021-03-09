@@ -70,8 +70,8 @@
   </PropertyGroup>
   <ItemGroup>
     <PackageReference Include="Cake.Core" Version="0.33.0" PrivateAssets="All" />
-    <PackageReference Include="DiscUtils.Core" Version="0.13.0.0-alpha" />
-    <PackageReference Include="DiscUtils.Iso9660" Version="0.13.0.0-alpha" />
-    <PackageReference Include="DiscUtils.Streams" Version="0.13.0.0-alpha" />
+    <PackageReference Include="DiscUtils.Core" Version="0.15.1-ci0007" />
+    <PackageReference Include="DiscUtils.Iso9660" Version="0.15.1-ci0007" />
+    <PackageReference Include="DiscUtils.Streams" Version="0.15.1-ci0007" />
   </ItemGroup>
 </Project>
