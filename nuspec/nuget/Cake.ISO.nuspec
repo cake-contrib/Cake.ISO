@@ -1,27 +1,27 @@
 <?xml version="1.0" encoding="utf-8"?>
 <package xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
-   <metadata xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
-      <id>Cake.ISO</id>
-      <version>0.1.2-alpha</version>
-      <authors>Austin Parker</authors>
-      <owners>Austin Parker</owners>
-      <title>Cake.ISO</title>
-      <description>Cake Build addin to allow creation of ISO files.</description>
-      <summary>Cake build addin to allow creation of ISO files.</summary>
-      <license type="expression">MIT</license>
-      <projectUrl>https://github.com/cake-contrib/Cake.ISO</projectUrl>
-      <iconUrl>https://cdn.jsdelivr.net/gh/cake-contrib/graphics/png/cake-contrib-medium.png</iconUrl>
-      <repository type="git" url="https://github.com/cake-contrib/Cake.ISO.git"/>
-      <requireLicenseAcceptance>false</requireLicenseAcceptance>
-      <copyright>Copyright (c) Austin Parker 2017</copyright>
-      <releaseNotes>Initial Release</releaseNotes>
-      <tags>Cake Script Build</tags>
+  <metadata xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
+    <id>Cake.ISO</id>
+    <version>0.0.1-local</version>
+    <authors>austinlparker,augustoproiete</authors>
+    <owners>cake-contrib,austinlparker,augustoproiete</owners>
+    <title>Cake.ISO</title>
+    <description>Cake addin for creating ISO files.</description>
+    <summary>Cake addin for creating ISO files.</summary>
+    <license type="expression">MIT</license>
+    <projectUrl>https://github.com/cake-contrib/Cake.ISO</projectUrl>
+    <iconUrl>https://cdn.jsdelivr.net/gh/cake-contrib/graphics/png/cake-contrib-medium.png</iconUrl>
+    <repository type="git" url="https://github.com/cake-contrib/Cake.ISO.git"/>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <copyright>Copyright (c) 2017-2021 Cake Contributions</copyright>
+    <releaseNotes />
+    <tags>cake iso cake-addin cake-build cake-contrib addin script build</tags>
    </metadata>
-   <files>
-      <file src="netstandard2.0\Cake.ISO.dll" target="lib/netstandard2.0" />
-      <file src="netstandard2.0\Cake.ISO.pdb" target="lib/netstandard2.0" />
-      <file src="netstandard2.0\DiscUtils.Core.dll" target="lib/netstandard2.0" />
-      <file src="netstandard2.0\DiscUtils.Iso9660.dll" target="lib/netstandard2.0" />
-      <file src="netstandard2.0\DiscUtils.Streams.dll" target="lib/netstandard2.0" />
-   </files>
+  <files>
+    <file src="netstandard2.0\Cake.ISO.dll" target="lib/netstandard2.0" />
+    <file src="netstandard2.0\Cake.ISO.pdb" target="lib/netstandard2.0" />
+    <file src="netstandard2.0\DiscUtils.Core.dll" target="lib/netstandard2.0" />
+    <file src="netstandard2.0\DiscUtils.Iso9660.dll" target="lib/netstandard2.0" />
+    <file src="netstandard2.0\DiscUtils.Streams.dll" target="lib/netstandard2.0" />
+  </files>
 </package>
