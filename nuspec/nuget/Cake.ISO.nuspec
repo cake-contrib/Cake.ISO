@@ -10,7 +10,7 @@
     <summary>Cake addin for creating ISO files.</summary>
     <license type="expression">MIT</license>
     <projectUrl>https://github.com/cake-contrib/Cake.ISO</projectUrl>
-    <iconUrl>https://cdn.jsdelivr.net/gh/cake-contrib/graphics/png/cake-contrib-medium.png</iconUrl>
+    <iconUrl>https://cdn.jsdelivr.net/gh/cake-contrib/graphics/png/addin/cake-contrib-addin-medium.png</iconUrl>
     <repository type="git" url="https://github.com/cake-contrib/Cake.ISO.git"/>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <copyright>Copyright (c) 2017-2021 Cake Contributions</copyright>
