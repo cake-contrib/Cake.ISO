@@ -19,14 +19,19 @@ namespace Cake.ISO
             _log = log;
         }
 
-        public void CreateIso(string inputPath, string outputPath, string volumeIdentifier)
+        public void CreateIso(DirectoryPath inputDirectoryPath, FilePath outputFilePath, string volumeIdentifier)
         {
+            var inputPath = inputDirectoryPath.FullPath;
+            var outputPath = outputFilePath.FullPath;
+
             _log.Verbose($"Creating ISO from directory {inputPath}");
+
             var builder = new CDBuilder
             {
                 UseJoliet = true,
                 VolumeIdentifier = volumeIdentifier ?? "CAKE_ISO"
             };
+
             foreach (var entry in Directory.GetFileSystemEntries(inputPath, "*", SearchOption.AllDirectories))
             {
                 var fileInfo = new FileInfo(entry);
@@ -41,6 +46,7 @@ namespace Cake.ISO
                     builder.AddFile(Path.GetFullPath(entry).Replace(inputPath, ""), entry);
                 }
             }
+
             builder.Build(outputPath);
         }
     }
