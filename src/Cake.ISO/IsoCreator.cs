@@ -8,17 +8,31 @@ using System.IO;
 
 namespace Cake.ISO
 {
+    /// <summary>
+    /// Contains functionality related to creating ISO files.
+    /// </summary>
     public class IsoCreator
     {
         private readonly ICakeEnvironment _environment;
         private readonly ICakeLog _log;
 
+        /// <summary>
+        /// Generates an ISO file from a given path.
+        /// </summary>
+        /// <param name="environment">The Cake environment.</param>
+        /// <param name="log">The Cake log.</param>
         public IsoCreator(ICakeEnvironment environment, ICakeLog log)
         {
             _environment = environment;
             _log = log;
         }
 
+        /// <summary>
+        /// Generates an ISO file from a given path.
+        /// </summary>
+        /// <param name="inputDirectoryPath">The input directory.</param>
+        /// <param name="outputFilePath">The output file name.</param>
+        /// <param name="volumeIdentifier">The volume label.</param>
         public void CreateIso(DirectoryPath inputDirectoryPath, FilePath outputFilePath, string volumeIdentifier)
         {
             var inputPath = inputDirectoryPath.FullPath;

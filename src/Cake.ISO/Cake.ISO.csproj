@@ -1,77 +1,61 @@
 <Project Sdk="Microsoft.NET.Sdk">
+
   <PropertyGroup>
-    <TargetFrameworks>netstandard2.0</TargetFrameworks>
-  </PropertyGroup>
-  <!-- General package metadata -->
-  <PropertyGroup>
-    <PackageId>$(AssemblyName)</PackageId>
-    <Copyright>Copyright (c) Austin Parker 2017</Copyright>
-    <Authors>Austin Parker</Authors>
-    <Description>Cake Build addin to allow creation of ISO files.</Description>
-    <RepositoryUrl>https://github.com/cake-contrib/Cake.ISO.git</RepositoryUrl>
-    <RepositoryType>Git</RepositoryType>
-    <PackageTags>Cake Script Build ISO</PackageTags>
-    <PackageIconUrl>https://cdn.jsdelivr.net/gh/cake-contrib/graphics/png/cake-contrib-medium.png</PackageIconUrl>
-    <CopyLocalLockFileAssemblies>true</CopyLocalLockFileAssemblies>
-  </PropertyGroup>
-  <!-- Misc -->
-  <PropertyGroup>
-    <NetStandardImplicitPackageVersion Condition=" '$(TargetFramework)' == 'netcoreapp2.0' ">2.0.0</NetStandardImplicitPackageVersion>
-  </PropertyGroup>
-  <!-- Warnings as errors -->
-  <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
+    <TargetFrameworks>net6.0;net5.0;netcoreapp3.1</TargetFrameworks>
+    <RootNamespace>Cake.ISO</RootNamespace>
+
+    <AssemblyName>Cake.ISO</AssemblyName>
+    <AssemblyVersion>0.0.1.0</AssemblyVersion>
+    <GenerateAssemblyVersionAttribute>true</GenerateAssemblyVersionAttribute>
+    <GenerateAssemblyFileVersionAttribute>true</GenerateAssemblyFileVersionAttribute>
+    <GenerateDocumentationFile>true</GenerateDocumentationFile>
+
+    <PublishRepositoryUrl>true</PublishRepositoryUrl>
+    <DebugType>portable</DebugType>
+    <IncludeSymbols>true</IncludeSymbols>
+    <EmbedUntrackedSources>true</EmbedUntrackedSources>
+    <SymbolPackageFormat>snupkg</SymbolPackageFormat>
+    <AllowedOutputExtensionsInPackageBuildOutputFolder>$(AllowedOutputExtensionsInPackageBuildOutputFolder);.pdb</AllowedOutputExtensionsInPackageBuildOutputFolder>
+
+    <NoWarn>$(NoWarn);NU5048</NoWarn>
     <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
+    <TreatSpecificWarningsAsErrors />
   </PropertyGroup>
-  <PropertyGroup Condition=" '$(SourceAnalysisTreatErrorsAsWarnings)' == ''">
-    <SourceAnalysisTreatErrorsAsWarnings>False</SourceAnalysisTreatErrorsAsWarnings>
-  </PropertyGroup>
-  <!-- Define .NET Core constants -->
-  <PropertyGroup Condition=" '$(TargetFramework)' == 'netstandard2.0' ">
-    <DefineConstants>$(DefineConstants);NETCORE</DefineConstants>
-    <DebugType>portable</DebugType>
-  </PropertyGroup>
-  <PropertyGroup Condition=" '$(TargetFramework)' == 'netcoreapp2.0' ">
-    <DefineConstants>$(DefineConstants);NETCORE</DefineConstants>
-    <DebugType>portable</DebugType>
-  </PropertyGroup>
-  <!-- Attribute generation -->
+
   <PropertyGroup>
-    <GenerateAssemblyTitleAttribute>false</GenerateAssemblyTitleAttribute>
-    <GenerateAssemblyDescriptionAttribute>false</GenerateAssemblyDescriptionAttribute>
-    <GenerateAssemblyProductAttribute>false</GenerateAssemblyProductAttribute>
-    <GenerateAssemblyVersionAttribute>false</GenerateAssemblyVersionAttribute>
-    <GenerateAssemblyFileVersionAttribute>false</GenerateAssemblyFileVersionAttribute>
-    <GenerateAssemblyInformationalVersionAttribute>false</GenerateAssemblyInformationalVersionAttribute>
-    <GenerateAssemblyCopyrightAttribute>false</GenerateAssemblyCopyrightAttribute>
-    <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
-    <PackageLicenseUrl>https://github.com/cake-contrib/Cake.ISO/blob/master/LICENSE</PackageLicenseUrl>
+    <PackageId>Cake.ISO</PackageId>
+    <Version>0.0.1-local</Version>
+    <Authors>Austin Parker, C. Augusto Proiete, and Contributors</Authors>
+    <Description>Cake Build addin to allow creation of ISO files.</Description>
+    <Copyright>Copyright (c) Austin Parker 2017-2022</Copyright>
+    <PackageTags>cake;iso;cake-addin;cake-build;addin;script;build</PackageTags>
+    <PackageLicenseExpression>MIT</PackageLicenseExpression>
+    <PackageIcon>images\icon.png</PackageIcon>
+    <PackageIconUrl>https://cdn.jsdelivr.net/gh/cake-contrib/graphics/png/addin/cake-contrib-addin-medium.png</PackageIconUrl>
     <PackageProjectUrl>https://github.com/cake-contrib/Cake.ISO</PackageProjectUrl>
-    <PackageReleaseNotes>Initial Release</PackageReleaseNotes>
+    <PackageReleaseNotes>https://github.com/cake-contrib/Cake.ISO/releases</PackageReleaseNotes>
+    <RepositoryType>git</RepositoryType>
+    <RepositoryUrl>https://github.com/cake-contrib/Cake.ISO.git</RepositoryUrl>
   </PropertyGroup>
-  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
-    <DebugSymbols>true</DebugSymbols>
-    <DebugType>full</DebugType>
-    <Optimize>false</Optimize>
-    <OutputPath>bin\Debug\</OutputPath>
-    <DefineConstants>DEBUG;TRACE</DefineConstants>
-    <ErrorReport>prompt</ErrorReport>
-    <WarningLevel>4</WarningLevel>
-  </PropertyGroup>
-  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
-    <DebugType>pdbonly</DebugType>
-    <Optimize>true</Optimize>
-    <OutputPath>bin\Release\</OutputPath>
-    <DefineConstants>TRACE</DefineConstants>
-    <ErrorReport>prompt</ErrorReport>
-    <WarningLevel>4</WarningLevel>
-  </PropertyGroup>
-  <PropertyGroup Condition=" '$(SourceAnalysisTreatErrorsAsWarnings)' == ''">
-    <SourceAnalysisTreatErrorsAsWarnings>False</SourceAnalysisTreatErrorsAsWarnings>
-  </PropertyGroup>
+
   <ItemGroup>
-    <PackageReference Include="Cake.Core" Version="1.0.0" PrivateAssets="All" />
+    <AssemblyAttribute Include="System.Runtime.CompilerServices.InternalsVisibleTo">
+      <_Parameter1>Cake.ISO.Tests</_Parameter1>
+    </AssemblyAttribute>
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Cake.Core" Version="2.0.0" PrivateAssets="All" />
+
     <PackageReference Include="DiscUtils.Core" Version="0.15.1-ci0007" />
     <PackageReference Include="DiscUtils.Iso9660" Version="0.15.1-ci0007" />
     <PackageReference Include="DiscUtils.Streams" Version="0.15.1-ci0007" />
+
+    <PackageReference Include="Microsoft.SourceLink.GitHub" Version="1.1.1" PrivateAssets="All" />
   </ItemGroup>
+
+  <ItemGroup>
+    <None Include="..\..\asset\cake-iso-nuget.png" Pack="true" Visible="false" PackagePath="images\icon.png" />
+  </ItemGroup>
+
 </Project>
