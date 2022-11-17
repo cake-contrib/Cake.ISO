@@ -14,8 +14,8 @@ namespace Cake.ISO
         /// Generates an ISO file from a given path.
         /// </summary>
         /// <param name="context">The Cake context.</param>
-        /// <param name="inputPath">The input directory.</param>
-        /// <param name="outputPath">The output file name.</param>
+        /// <param name="inputDirectoryPath">The input directory.</param>
+        /// <param name="outputFilePath">The output file name.</param>
         /// <param name="volumeIdentifier">The volume label.</param>
         /// <example>
         /// <code>
@@ -26,10 +26,10 @@ namespace Cake.ISO
         /// </code>
         /// </example>
         [CakeMethodAlias]
-        public static void CreateIso(this ICakeContext context, DirectoryPath inputPath, FilePath outputPath, string volumeIdentifier)
+        public static void CreateIso(this ICakeContext context, DirectoryPath inputDirectoryPath, FilePath outputFilePath, string volumeIdentifier)
         {
             var isoBuilder = new IsoCreator(context.Environment, context.Log);
-            isoBuilder.CreateIso(inputPath, outputPath, volumeIdentifier);
+            isoBuilder.CreateIso(inputDirectoryPath, outputFilePath, volumeIdentifier);
         }
     }
 }

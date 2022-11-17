@@ -1,0 +1,64 @@
+on:
+  push:
+    branches:
+      - master
+      - develop
+      - "feature/**"
+      - "release/**"
+      - "hotfix/**"
+    tags:
+      - "*.*.*"
+    paths-ignore:
+      - "README.md"
+
+  pull_request:
+
+  workflow_dispatch:
+
+env:
+  DOTNET_SKIP_FIRST_TIME_EXPERIENCE: true
+  DOTNET_CLI_TELEMETRY_OPTOUT: true
+  DOTNET_NOLOGO: true
+
+jobs:
+  build:
+    strategy:
+      fail-fast: false
+      matrix:
+        job:
+          - os: ubuntu-20.04
+            build: ./build.sh
+            push: true
+          - os: windows-2022
+            build: ./build.cmd
+          - os: macos-12
+            build: ./build.sh
+    name: ${{ matrix.job.os }}
+    runs-on: ${{ matrix.job.os }}
+    steps:
+      - name: Setup netcoreapp3.1
+        uses: actions/setup-dotnet@v3.0.3
+        with:
+          dotnet-version: "3.1.425"
+      - name: Setup net5.0
+        uses: actions/setup-dotnet@v3.0.3
+        with:
+          dotnet-version: "5.0.403"
+      - name: Setup net6.0
+        uses: actions/setup-dotnet@v3.0.3
+        with:
+          dotnet-version: "6.0.403"
+      - name: Run dotnet --info
+        run: dotnet --info
+      - uses: actions/checkout@v3.0.2
+        with:
+          fetch-depth: 0
+      - name: Build
+        run: ${{ matrix.job.build }} --verbosity=diagnostic --target=pack
+      - name: Publish artifacts
+        if: matrix.job.push && (github.ref == 'refs/heads/master' || startsWith(github.ref, 'refs/tags/'))
+        uses: actions/upload-artifact@v3.1.0
+        with:
+          if-no-files-found: warn
+          name: package
+          path: artifact/nuget/**/*

@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.IO;
 using Moq;
 using Xunit;
 using Cake.Core;
@@ -22,6 +17,7 @@ namespace Cake.ISO.Tests
         public Mock<ICakeEnvironment> CakeEnvironmentMock { get; set; }
         public Mock<ICakeLog> CakeLogMock { get; set; } 
     }
+
     public class IsoTests : IClassFixture<IsoTestsFixture>
     {
         private readonly ITestOutputHelper output;
@@ -31,6 +27,7 @@ namespace Cake.ISO.Tests
             this.output = output;
             _fixture = fixture;
         }
+
         [Fact]
         public void ShouldCreateAnIsoWithAFile()
         {

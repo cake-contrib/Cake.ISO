@@ -3,9 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.26403.7
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Cake.ISO", "Cake.ISO\Cake.ISO.csproj", "{8D43581F-41D7-4909-833E-483993C54567}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Cake.ISO", "src\Cake.ISO\Cake.ISO.csproj", "{8D43581F-41D7-4909-833E-483993C54567}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Cake.ISO.Tests", "Cake.ISO.Tests\Cake.ISO.Tests.csproj", "{7659E9DE-2F52-469A-9302-75F2815D91DD}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Cake.ISO.Tests", "test\Cake.ISO.Tests\Cake.ISO.Tests.csproj", "{7659E9DE-2F52-469A-9302-75F2815D91DD}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
